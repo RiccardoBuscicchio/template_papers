@@ -48,7 +48,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
-          publish_branch: build_pdf
+          publish_branch: physrevd_build
           force_orphan: true
 
   deploy_arxiv:
@@ -71,5 +71,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
-          publish_branch: build_arxiv
+          publish_branch: arxiv_build
           force_orphan: true

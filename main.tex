@@ -1,0 +1,149 @@
+\documentclass[floats,floatfix,showpacs,amssymb,prd,twocolumn,superscriptaddress,nofootinbib,nolongbibliography,reprint,prd,aps]{revtex4-2}
+\usepackage{textcomp}
+\usepackage{amssymb,amsmath,verbatim,mathtools,needspace,enumitem,etoolbox,graphicx,microtype,afterpage,bigints,gensymb,tabularx,xspace,siunitx}
+\usepackage{aasmacros}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{lipsum}
+\usepackage[usenames, dvipsnames, table]{xcolor}
+\usepackage{physics}
+\usepackage{soul}
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+\DeclareSIUnit\solarmass{\ensuremath{M_{\odot}}}
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\lightspeed{$c$}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\arcsecond{as}
+\DeclareSIUnit\astronomicalunit{AU}
+\DeclareSIUnit\clight{\ensuremath c}
+
+\definecolor{linkcolor}{rgb}{0.0,0.3,0.5}
+\usepackage[colorlinks = true,
+            linkcolor = linkcolor,
+            urlcolor  = linkcolor,
+            citecolor = linkcolor,
+            anchorcolor = linkcolor]{hyperref}
+\usepackage[capitalize]{cleveref}
+\Crefname{equation}{Eq.}{Eqs.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{tabular}{Tab.}{Tabs.}
+\Crefname{section}{Sec.}{Secs.}
+\Crefname{subsection}{Sec.}{Secs.}
+
+\setlength {\marginparwidth }{2.cm}
+\usepackage{array}
+
+\newcommand{\vk}[1]{\textcolor{purple}{\textit{VK: #1}}}
+\newcommand{\ak}[1]{\textcolor{olive}{\textit{AK: #1}}}
+\newcommand{\rb}[1]{\textcolor{red}{#1}}
+\newcommand{\dg}[1]{\textcolor{red}{DG: {#1}}}
+\newcommand{\citeme}{\textcolor{blue}{CIT.}}
+\newcommand{\citethis}[1]{\textcolor{blue}{CIT: #1}}
+\newcommand{\ssim}{\mathchar"5218\relax\,}
+\newcommand{\ttimes}{\!\times\!\relax}
+
+\newcommand{\sub}[1]{_{\text{#1}}}
+\newcommand{\super}[1]{^{\text{#1}}}
+\newcommand{\uvec}[1]{\bm{\hat{#1}}}
+\newcommand{\dvec}[1]{\dot{\bm{#1}}}
+\newcommand{\ddvec}[1]{\ddot{\bm{#1}}}
+\newcommand{\dddvec}[1]{\dddot{\bm{#1}}}
+\newcommand{\duvec}[1]{\dot{\bm{\hat{#1}}}}
+\newcommand{\dduvec}[1]{\ddot{\bm{\hat{#1}}}}
+\newcommand{\ddduvec}[1]{\dddot{\bm{\hat{#1}}}}
+\newcommand{\ord}[1]{\mathcal{O} \left( #1 \right)}
+
+\usepackage{orcidlink}
+\begin{document}
+\sisetup{range-phrase=-, range-units=single}
+
+
+
+\title{The title}
+
+%Affiliations
+\affiliation{Dipartimento di Fisica “G. Occhialini”, Università degli Studi di Milano-Bicocca, Piazza della Scienza 3, 20126 Milano, Italy}
+\affiliation{INFN, Sezione di Milano-Bicocca, Piazza della Scienza 3, 20126 Milano, Italy}
+\affiliation{Institute for Gravitational Wave Astronomy \& School of Physics and Astronomy, University of Birmingham, Birmingham, B15 2TT, UK}
+
+%Authors
+\author{Riccardo~Buscicchio~\orcidlink{0000-0002-7387-6754}}
+\email{riccardo.buscicchio@unimib.it}
+\date{\today}
+
+\begin{abstract}
+A simple abstract 
+\end{abstract}
+
+\maketitle
+
+\section{\label{sec:a} Introduction}
+Intro with a range using SI units $\SIrange{e-4}{e-1}{\hertz}$.
+A citation Ref.~\cite{2023LRR....26....2A}. 
+A direct citation~\cite{2023JCAP...08..034B}.
+Multiple citations together~\cite{2023JCAP...08..034B,Kor22}.
+
+The paper is organized as follows.
+In~\cref{sec:a}, we do such and such.
+Finally, in~\cref{sec:b} we discuss the implications.
+Another type of citation~\citep{2023JCAP...08..034B}. 
+
+Another citation approach in~\citet{Kor22}
+Some dimensionful quantities \SI{3}{\kilo\parsec}. 
+Some other \SI{13.5}{\giga\year}.
+Another citation style~\citep[e.g.,][]{Kor22}. 
+Another quantity with scale factor \SI{8.2e10}{\solarmass}. 
+A pure number \num{26e6}. 
+\begin{equation}
+    \dot{f} = \frac{96 \pi^{8/3}}{5 c^5}  \left( G {\cal M}_c \right)^{5/3} f^{11/3}, \label{eq:fdot}
+\end{equation}
+A percentage \SI{1}{\percent} and some dimensionful ranges $f>\SIrange{2}{3}{\milli\hertz}$ or $f<\SIrange{2}{3}{\milli\hertz}$.
+
+\section{\label{sec:b} Methodology}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1.0\columnwidth]{example-image-a}
+    \caption{A single column figure}\label{fig:1}
+\end{figure}
+
+
+\begin{figure*}[t]
+    \includegraphics[width=2.0\columnwidth]{example-image-b}
+    \caption{A double column figure}\label{fig:2}
+\end{figure*}
+
+\begin{acknowledgments}
+%
+The authors are grateful to \ldots for valuable inputs.
+R.B. acknowledges support through the Italian Space Agency grant \emph{Phase A activity for LISA mission, n. 2017--29--H.0}.
+%
+Computational work was performed using University of Birmingham BlueBEAR High Performance Computing facility and CINECA with allocations through INFN, Bicocca, and ISCRA project HP10BEQ9JB.
+
+\textit{Software}:
+We acknowledge usage of 
+\textsc{Mathematica}~\cite{Mathematica} 
+and of the following 
+\textsc{Python}~\cite{10.5555/1593511} 
+packages for modeling, analysis, post-processing, and production of results throughout:
+\textsc{matplotlib}~\cite{2007CSE.....9...90H}.
+
+\end{acknowledgments}
+
+\clearpage
+
+\appendix
+
+\input{appendix}
+
+\bibliographystyle{apsrev4-2} %apsrev4-2
+\bibliography{main}% Produces the bibliography via BibTeX.
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******

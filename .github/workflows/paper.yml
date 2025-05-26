@@ -1,9 +1,9 @@
 name: paper
 on:
   push:
-    branches: [ "physrevd" ]
+    branches: [ "epjc" ]
   pull_request:
-    branches: [ "physrevd" ]
+    branches: [ "epjc" ]
   workflow_dispatch:
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
         working-directory: ${{ env.DIR }}
         run: pdflatex ${{ env.FILE }}; bibtex ${{ env.FILE }}; pdflatex ${{ env.FILE }}; pdflatex ${{ env.FILE }};
       - name: Zip arXiv submission
-        run: zip -r ${{ env.FILE }}.zip ${{ env.FILE }}.bbl ${{ env.FILE }}.tex aasmacros.sty appendix.tex #_Figure*.pdf
+        run: zip -r ${{ env.FILE }}.zip ${{ env.FILE }}.bbl ${{ env.FILE }}.bib ${{ env.FILE }}.tex aasmacros.sty epjc.bst svepj.clo svjour.cls widetext.sty #_Figure*.pdf #appendix.tex
       - name: Move paper pdf and submission zip to artifacts
         run: mkdir -p artifacts && mv -f ${{ env.FILE }}.pdf ${{ env.FILE }}.zip artifacts
       - name: Upload artifacts
@@ -48,7 +48,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
-          publish_branch: physrevd_build
+          publish_branch: epjc_build
           force_orphan: true
 
   deploy_arxiv:

@@ -1,9 +1,9 @@
 name: paper
 on:
   push:
-    branches: [ "physrevd" ]
+    branches: [ "physrevl" ]
   pull_request:
-    branches: [ "physrevd" ]
+    branches: [ "physrevl" ]
   workflow_dispatch:
 jobs:
   build:
@@ -48,7 +48,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
-          publish_branch: physrevd_build
+          publish_branch: physrevl_build
           force_orphan: true
 
   deploy_arxiv:

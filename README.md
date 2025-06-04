@@ -3,3 +3,4 @@ Repo hosting template papers by journal
 
 - JOSS paper workflow: [![JOSS](https://github.com/RiccardoBuscicchio/template_papers/actions/workflows/paper.yml/badge.svg?branch=joss)](https://github.com/RiccardoBuscicchio/template_papers/actions/workflows/paper.yml?query=branch%3Ajoss++)
 - PhysRevD paper workflow: [![PhysRevD](https://github.com/RiccardoBuscicchio/template_papers/actions/workflows/paper.yml/badge.svg?branch=physrevd)](https://github.com/RiccardoBuscicchio/template_papers/actions/workflows/paper.yml?query=branch%3Aphysrevd++)
+- EPJC paper workflow: [![JOSS](https://github.com/RiccardoBuscicchio/template_papers/actions/workflows/paper.yml/badge.svg?branch=epjc)](https://github.com/RiccardoBuscicchio/template_papers/actions/workflows/paper.yml?query=branch%3Aepjc++)
